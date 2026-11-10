@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Estoque Fofo - POO</title>
+    <title>Cadastro de Produtos - POO</title>
     <link rel="stylesheet" href="style.css">
     <!-- Fonte suave e fofa do Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-
+    
     <div class="container">
         <div class="form-group" style="margin-bottom: 20px;">
             <label for="busca">Pesquisar na Tabela:</label>
@@ -22,34 +22,34 @@
                 <img src="gatopng.png" alt="Gatinho fofo">
                 <h1>Registro de Produtos</h1>
             </div>
-
+            
             <!-- Formulário de Entrada -->
             <form id="produto-form">
                 <div class="form-group">
                     <label for="nome">Nome do Produto:</label>
                     <input type="text" id="nome" placeholder="Ex: Cupcake de Morango" required/>
                 </div>
-
+                
                 <div class="form-group">
                     <label for="preco">Preço (R$):</label>
                     <input type="number" id="preco" step="0.01" placeholder="Ex: 12.50" required />
                 </div>
-
+                
                 <div class="form-group">
                     <label for="quantidade">Quantidade:</label>
                     <input type="number" id="quantidade" placeholder="Ex: 5" required />
                 </div>
-
+                
                 <button type="submit" class="btn-primary">Adicionar Produto</button>
             </form>
         </div>
-
+        
         <!-- Cabeçalho de Ações e Resumo -->
         <div class="resumo-container">
             <h3 id="total-estoque">Total em Estoque: R$ 0,00</h3>
             <button id="limpar-tabela" class="btn-danger">Limpar Tudo</button>
         </div>
-
+        
         <!-- Tabela de Exibição -->
         <table id="tabela-produtos">
             <thead>
@@ -66,7 +66,42 @@
             </tbody>
         </table>
     </div>
+    
+    <!-- Tabela de Exibição -->
+    <table id="tabela-produtos">
+        <!-- ... (cabeçalho e tbody mantidos igual) ... -->
+    </table>
+    
+    <!-- NOVO: Botão Conceito Bootstrap no Rodapé -->
+    <div style="text-align: center; margin-top: 25px;">
+        <button type="button" id="btn-conceito-bootstrap" class="btn-danger" style="background-color: #c9184a; color: white;">Ver Conceito Bootstrap</button>
+    </div>
+</div>
+
+<!-- NOVO: Container para Mensagem Inline / Erro no Formulário -->
+<div id="mensagem-erro" style="display: none; color: #c9184a; background-color: #ffe6ea; padding: 10px; border-radius: 10px; margin-bottom: 15px; font-size: 14px; text-align: center; border: 1px dashed #ffb3c1;"></div>
+
+<!-- NOVO: Estrutura do Modal Customizado (Confirmação e Bootstrap) -->
+<div id="modal-customizado" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
+    <div style="background-color: white; padding: 30px; border-radius: 20px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.3); border: 3px solid #ffccd5;">
+        <h3 id="modal-titulo" style="color: #c9184a; margin-bottom: 15px;">Confirmação</h3>
+        <p id="modal-texto" style="color: #6d4c54; margin-bottom: 20px; font-size: 15px;"></p>
+        <div id="modal-botoes" style="display: flex; justify-content: center; gap: 10px;">
+            <button type="button" id="modal-btn-cancelar" class="btn-danger">Confirmar</button>
+            <button type="button" id="modal-btn-confirmar" class="btn-primary">Confirmar</button>
+        </div>
+    </div>
+</div>
+
+<footer class="site-footer">
+        <img src="665d2db01e6fcb05a53f9d001c97b27e_0(1).jpg" alt="Foto do Rodapé" class="footer-img-circular">
+        <p>Cadastro de Produtos &copy; 2026</p>
+    </footer>
 
     <script src="script.js"></script>
+</body>
+</html>
+
+<script src="script.js"></script>
 </body>
 </html>

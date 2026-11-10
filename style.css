@@ -222,6 +222,28 @@ tbody tr:hover {
     background-color: #ff4d6d;
 }
 
+.site-footer {
+    text-align: center;
+    margin: 40px 0 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-img-circular {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #ff758f;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.site-footer p {
+    font-size: 13px;
+    color: #a44a5e;
+}
 /* Responsividade para telas menores */
 @media (max-width: 650px) {
     .top-section {
