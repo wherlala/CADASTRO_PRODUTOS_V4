@@ -12,6 +12,7 @@ header {
     justify-content: space-between;
     display: flex;
     position: sticky;
+    border-radius: 20px;
 }
 
 body {
