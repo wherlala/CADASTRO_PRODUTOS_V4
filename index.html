@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Produtos - POO</title>
+    <title>Cadastro de Produtos - POO V6</title>
     <link rel="stylesheet" href="style.css">
     <!-- Fonte suave e fofa do Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
@@ -12,15 +12,41 @@
 <body>
     
     <div class="container">
-        <div class="form-group" style="margin-bottom: 20px;">
-            <label for="busca">Pesquisar na Tabela:</label>
-            <input type="text" id="busca" placeholder="Digite para filtrar os produtos..." />
+        <!-- Seção de Busca e Ordenação (V6) -->
+        <div class="search-sort-container">
+            <div class="form-group search-group">
+                <label for="busca">Pesquisar na Tabela:</label>
+                <input type="text" id="busca" placeholder="Digite para filtrar os produtos..." />
+            </div>
+            
+            <div class="form-group sort-group">
+                <label for="ordenacao">Ordenar por:</label>
+                <select id="ordenacao">
+                    <option value="padrao">Padrão (Cadastro)</option>
+                    <option value="menor-qtd">Menor Quantidade</option>
+                    <option value="maior-preco">Maior Preço</option>
+                    <option value="menor-preco">Menor Preço</option>
+                    <option value="alfabetica">Ordem Alfabética (A–Z)</option>
+                </select>
+            </div>
         </div>
+
+        <!-- Painel de Ações V6 (CSV e Backup/Restaurar) -->
+        <div class="v6-actions">
+            <button type="button" id="btn-exportar-csv" class="btn-primary btn-csv">Exportar CSV</button>
+            <button type="button" id="btn-backup-json" class="btn-primary btn-backup">Backup JSON</button>
+            
+            <label for="input-restaurar-json" class="btn-primary btn-restaurar">
+                Restaurar JSON
+            </label>
+            <input type="file" id="input-restaurar-json" accept=".json" class="input-file-hidden" />
+        </div>
+
         <!-- Seção Superior: Header ao lado esquerdo do formulário -->
         <div class="top-section">
             <div class="header-topo">
                 <img src="gatopng.png" alt="Gatinho fofo">
-                <h1>Registro de Produtos</h1>
+                <h1>Registro de Produtos V6</h1>
             </div>
             
             <!-- Formulário de Entrada -->
@@ -65,43 +91,33 @@
                 <!-- As linhas da tabela serão inseridas via JS -->
             </tbody>
         </table>
-    </div>
-    
-    <!-- Tabela de Exibição -->
-    <table id="tabela-produtos">
-        <!-- ... (cabeçalho e tbody mantidos igual) ... -->
-    </table>
-    
-    <!-- NOVO: Botão Conceito Bootstrap no Rodapé -->
-    <div style="text-align: center; margin-top: 25px;">
-        <button type="button" id="btn-conceito-bootstrap" class="btn-danger" style="background-color: #c9184a; color: white;">Ver Conceito Bootstrap</button>
-    </div>
-</div>
 
-<!-- NOVO: Container para Mensagem Inline / Erro no Formulário -->
-<div id="mensagem-erro" style="display: none; color: #c9184a; background-color: #ffe6ea; padding: 10px; border-radius: 10px; margin-bottom: 15px; font-size: 14px; text-align: center; border: 1px dashed #ffb3c1;"></div>
-
-<!-- NOVO: Estrutura do Modal Customizado (Confirmação e Bootstrap) -->
-<div id="modal-customizado" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
-    <div style="background-color: white; padding: 30px; border-radius: 20px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.3); border: 3px solid #ffccd5;">
-        <h3 id="modal-titulo" style="color: #c9184a; margin-bottom: 15px;">Confirmação</h3>
-        <p id="modal-texto" style="color: #6d4c54; margin-bottom: 20px; font-size: 15px;"></p>
-        <div id="modal-botoes" style="display: flex; justify-content: center; gap: 10px;">
-            <button type="button" id="modal-btn-cancelar" class="btn-danger">Confirmar</button>
-            <button type="button" id="modal-btn-confirmar" class="btn-primary">Confirmar</button>
+        <!-- Botão Conceito Bootstrap no Rodapé -->
+        <div class="bootstrap-btn-container">
+            <button type="button" id="btn-conceito-bootstrap" class="btn-danger btn-bootstrap">Ver Conceito Bootstrap</button>
         </div>
     </div>
-</div>
 
-<footer class="site-footer">
+    <!-- Container para Mensagem Inline / Erro no Formulário -->
+    <div id="mensagem-erro" class="mensagem-erro-oculta"></div>
+
+    <!-- Estrutura do Modal Customizado -->
+    <div id="modal-customizado" class="modal-overlay">
+        <div class="modal-content">
+            <h3 id="modal-titulo">Confirmação</h3>
+            <p id="modal-texto"></p>
+            <div id="modal-botoes" class="modal-botoes-container">
+                <button type="button" id="modal-btn-cancelar" class="btn-danger">Cancelar</button>
+                <button type="button" id="modal-btn-confirmar" class="btn-primary">Confirmar</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
         <img src="665d2db01e6fcb05a53f9d001c97b27e_0(1).jpg" alt="Foto do Rodapé" class="footer-img-circular">
-        <p>Cadastro de Produtos &copy; 2026</p>
+        <p>Cadastro de Produtos V6 &copy; 2026</p>
     </footer>
 
     <script src="script.js"></script>
-</body>
-</html>
-
-<script src="script.js"></script>
 </body>
 </html>
