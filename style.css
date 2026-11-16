@@ -4,6 +4,16 @@
     padding: 0;
 }
 
+header {
+    background-color: #ffb3c1;
+    padding: 30px;
+    top: 0;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    position: sticky;
+}
+
 body {
     font-family: 'Quicksand', Arial, sans-serif;
     background-color: #fff0f5; /* Rosa claro pastel acolhedor */
@@ -54,6 +64,8 @@ body {
     margin-bottom: 12px;
     filter: drop-shadow(0 4px 6px rgba(0,0,0,0.08));
     transition: transform 0.3s ease;
+    padding-bottom: 20px;
+    padding-top: 20px;
 }
 
 .header-topo img:hover {
